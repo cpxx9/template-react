@@ -11,14 +11,6 @@ const router = createBrowserRouter(routesConfig);
 // });
 
 function App() {
-  const [expenseTable, setExpenseTable] = useState([]);
-
-  const addToTable = (row) => {
-    let newTable = [...expenseTable];
-    newTable.push(row);
-    setExpenseTable(newTable);
-  };
-
   return (
     // <ExpenseContext.Provider value={{ expenseTable, addToTable }}>
     <RouterProvider router={router} />

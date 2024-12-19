@@ -1,5 +1,8 @@
 {
   "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "jsxBracketSameLine": true,
   "overrides": [
     {
       "files": ["*.html", "*.css", "*.scss", "*.sass", "*.less"],

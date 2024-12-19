@@ -1,32 +1,29 @@
 import './styles/App.css';
-
+import routesConfig from './routes/routesConfig';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createContext, useState } from 'react';
 
-import MainLayout from './layouts/MainLayout';
-import Root from './routes/Root';
-import NotFound from './routes/NotFound';
+const router = createBrowserRouter(routesConfig);
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <MainLayout />,
-    errorElement: <NotFound />,
-    children: [
-      {
-        index: true,
-        path: '/',
-        element: <Root />,
-      },
-      {
-        path: '*',
-        element: <NotFound />,
-      },
-    ],
-  },
-]);
+// export const ExpenseContext = createContext({
+//   expenseTable: [],
+//   addToTable: () => {},
+// });
 
 function App() {
-  return <RouterProvider router={router} />;
+  const [expenseTable, setExpenseTable] = useState([]);
+
+  const addToTable = (row) => {
+    let newTable = [...expenseTable];
+    newTable.push(row);
+    setExpenseTable(newTable);
+  };
+
+  return (
+    // <ExpenseContext.Provider value={{ expenseTable, addToTable }}>
+    <RouterProvider router={router} />
+    // </ExpenseContext.Provider>
+  );
 }
 
 export default App;

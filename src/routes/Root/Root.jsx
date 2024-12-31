@@ -3,7 +3,7 @@ import StyledRoot from './StyledRoot';
 const Root = () => {
   return (
     <StyledRoot>
-      <h1>Home</h1>
+      <h2>Home</h2>
     </StyledRoot>
   );
 };
